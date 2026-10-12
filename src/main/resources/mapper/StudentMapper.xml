@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="kopo.poly.mapper.IStudentMapper">
+
+    <insert id="insertStudent" parameterType="kopo.poly.dto.StudentDTO">
+        INSERT INTO STUDENT (
+            USER_ID, USER_NAME, EMAIL, ADDR
+        ) VALUES (
+                     #{userId}, #{userName}, #{email}, #{addr}
+                 )
+    </insert>
+
+    <select id="getStudentList" resultType="kopo.poly.dto.StudentDTO">
+        SELECT USER_ID, USER_NAME, EMAIL, ADDR FROM STUDENT
+    </select>
+
+    <select id="getStudent" parameterType="kopo.poly.dto.StudentDTO" resultType="kopo.poly.dto.StudentDTO">
+        SELECT USER_ID, USER_NAME, EMAIL, ADDR FROM STUDENT WHERE USER_ID = #{userId}
+    </select>
+
+</mapper>

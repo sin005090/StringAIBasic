@@ -8,8 +8,11 @@ import lombok.Setter;
 public class OcrDTO {
 
     private String filePath;
-
     private String fileName;
+    private String textFromImage;
 
-    private String result;
+    private String orgFileName;
+    private String ext;
+    private String regId;
+    private String chgId;
 }
